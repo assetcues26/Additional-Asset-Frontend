@@ -6,7 +6,7 @@
       logo: 'assetcues-logo.png',
       video: 'assetcues-animation.webm'
     },
-    DEFAULT_API_BASE: 'http://localhost:7071',
+    DEFAULT_API_BASE: 'https://additional-asset-backend-fastapi.onrender.com',
     ENDPOINTS: {
       analyze: '/api/additional_asset',
       health: '/api/health'
