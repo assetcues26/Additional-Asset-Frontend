@@ -1,0 +1,21 @@
+# OS
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Editors / IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Local scratch / logs (this app has no build step or node_modules)
+*.log
+.tmp/
+.temp/
+.cache/
+
+# Accidental env dumps if someone tests against a hosted API
+.env
+.env.*

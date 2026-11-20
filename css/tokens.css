@@ -1,0 +1,67 @@
+:root {
+  color-scheme: light;
+
+  /* Surfaces */
+  --bg: #FFFFFF;
+  --bg-grad-a: #FFFFFF;
+  --bg-grad-b: #F4F6FB;
+  --surface: #FFFFFF;
+  --surface-2: #FAF8F3;
+  --line: #E7E3D8;
+  --line-strong: #D5D0C2;
+
+  /* Ink */
+  --ink: #14181F;
+  --ink-2: #3B4452;
+  --muted: #667085;
+  --faint: #98A2B3;
+
+  /* Brand — matched to assetcues-logo.png text blue #374EA1 */
+  --brand: #374EA1;
+  --brand-600: #2C3F86;
+  --brand-100: #E8ECF7;
+  --brand-50: #F3F5FB;
+  --scan: #00B2B9;
+  --scan-100: #DDF7F3;
+
+  /* Semantic */
+  --ok: #1F9D63;   --ok-100: #E3F6EC;
+  --warn: #B7791F; --warn-100: #FDF3DC;
+  --orange: #C2410C; --orange-100: #FDEBDD;
+  --bad: #B42318;  --bad-100: #FDE7E5;
+
+  /* Grades */
+  --g-excellent: #0E8A6A;  --g-excellent-bg: #DDF5EE;
+  --g-good:      #2E9E55;  --g-good-bg:      #E3F6E8;
+  --g-fair:      #B7791F;  --g-fair-bg:      #FDF3DC;
+  --g-poor:      #C2410C;  --g-poor-bg:      #FDEBDD;
+  --g-bad:       #B42318;  --g-bad-bg:       #FDE7E5;
+  --g-unknown:   #667085;  --g-unknown-bg:   #EEF0F3;
+
+  /* Type */
+  --font-ui: "Plus Jakarta Sans", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+
+  /* Scale (4px base) */
+  --s-1: 4px; --s-2: 8px; --s-3: 12px; --s-4: 16px; --s-5: 20px; --s-6: 24px;
+  --s-8: 32px; --s-10: 40px; --s-12: 48px; --s-16: 64px;
+
+  /* Radius */
+  --r-sm: 10px; --r-md: 14px; --r-lg: 20px; --r-xl: 28px; --r-pill: 999px;
+
+  /* Elevation */
+  --shadow-1: 0 1px 2px rgba(20,24,31,.05), 0 1px 1px rgba(20,24,31,.03);
+  --shadow-2: 0 2px 4px rgba(20,24,31,.04), 0 8px 24px rgba(20,24,31,.06);
+  --shadow-3: 0 4px 8px rgba(20,24,31,.05), 0 20px 48px rgba(31,45,90,.12);
+  --ring: 0 0 0 3px rgba(55,78,161,.28);
+
+  /* Motion */
+  --ease-out: cubic-bezier(.22,1,.36,1);
+  --ease-in-out: cubic-bezier(.65,0,.35,1);
+  --ease-spring: cubic-bezier(.34,1.56,.64,1);
+  --t-fast: 120ms; --t-base: 200ms; --t-slow: 320ms; --t-xslow: 520ms; --t-hero: 800ms;
+
+  /* Layout */
+  --container: 1160px;
+  --header-h: 68px;
+}
