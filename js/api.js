@@ -44,7 +44,10 @@
           var mock = AA.mocks.resolve(AA.state.mock, {
             customerId: payload.customerId,
             assetClassId: payload.assetClassId,
-            categoryId: payload.categoryId
+            categoryId: payload.categoryId,
+            assetName: payload.assetName,
+            description: payload.description,
+            tagNumber: payload.tagNumber
           });
           if (!mock) {
             reject({ kind: 'server', message: 'Unknown mock' });
@@ -78,6 +81,9 @@
         fd.append('customerid', String(payload.customerId));
         if (payload.assetClassId) fd.append('assetclassid', String(payload.assetClassId));
         if (payload.categoryId) fd.append('categoryid', String(payload.categoryId));
+        if (payload.assetName) fd.append('assetname', String(payload.assetName));
+        if (payload.description) fd.append('description', String(payload.description));
+        if (payload.tagNumber) fd.append('tagnumber', String(payload.tagNumber));
 
         xhr = new XMLHttpRequest();
         AA.state.request.xhr = xhr;

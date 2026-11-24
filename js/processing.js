@@ -13,6 +13,11 @@
   var progressRaf = null;
   var finishing = false;
 
+  function optText(v) {
+    var s = v == null ? '' : String(v).trim();
+    return s || undefined;
+  }
+
   function weightOf(i) {
     return i === 0 ? 0.08 : (0.92 / (stages.length - 1));
   }
@@ -142,7 +147,7 @@
       if (rotatorTimer) window.clearInterval(rotatorTimer);
       rotatorTimer = null;
       el.textContent = AA.config.LONG_WAIT;
-    }, 45000);
+    }, AA.config.LONG_WAIT_MS || 45000);
   }
 
   function startElapsed() {
@@ -262,7 +267,10 @@
         tagFile: AA.state.files.tag,
         customerId: AA.state.inputs.customerId,
         assetClassId: AA.state.inputs.assetClassId || undefined,
-        categoryId: AA.state.inputs.categoryId || undefined
+        categoryId: AA.state.inputs.categoryId || undefined,
+        assetName: optText(AA.state.inputs.assetName),
+        description: optText(AA.state.inputs.description),
+        tagNumber: optText(AA.state.inputs.tagNumber)
       }, {
         onUploadProgress: function (pct) {
           AA.state.request.uploadPct = pct;

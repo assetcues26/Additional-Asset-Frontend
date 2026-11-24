@@ -2,6 +2,7 @@
 .DS_Store
 Thumbs.db
 Desktop.ini
+ehthumbs.db
 
 # Editors / IDEs
 .vscode/
@@ -9,13 +10,30 @@ Desktop.ini
 *.swp
 *.swo
 *~
+*.code-workspace
 
 # Local scratch / logs (this app has no build step or node_modules)
 *.log
 .tmp/
 .temp/
 .cache/
+dist/
+build/
+.out/
 
-# Accidental env dumps if someone tests against a hosted API
+# Env / secrets (frontend has none checked in; keep accidental dumps out)
 .env
 .env.*
+!.env.example
+*.pem
+*.key
+credentials.json
+secrets.json
+
+# Hosting / deploy caches
+.vercel/
+.netlify/
+
+# Optional local overrides
+*.local
+local.settings.json

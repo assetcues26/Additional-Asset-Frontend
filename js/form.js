@@ -154,7 +154,7 @@
       submitting = false;
       AA.$$('[data-action="analyze"]').forEach(function (b) {
         var label = AA.$('.btn-label', b);
-        if (label) label.textContent = 'Analyze asset';
+        if (label) label.textContent = AA.config.SUBMIT_LABEL || 'Analyze asset';
       });
       updateSubmitState();
       if (AA.processing) AA.processing.start();

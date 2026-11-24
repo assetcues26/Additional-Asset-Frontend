@@ -1,11 +1,12 @@
 (function (AA) {
   'use strict';
 
+  var APP = AA.config.APP_NAME || 'Additional Asset';
   var TITLES = {
-    idle: 'Additional Asset',
-    processing: 'Analyzing… · Additional Asset',
-    result: 'Analysis complete · Additional Asset',
-    error: 'Something went wrong · Additional Asset'
+    idle: APP,
+    processing: 'Analyzing… · ' + APP,
+    result: 'Analysis complete · ' + APP,
+    error: 'Something went wrong · ' + APP
   };
 
   var VIEWS = ['idle', 'processing', 'result', 'error'];

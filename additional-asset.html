@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="color-scheme" content="light" />
+  <meta name="theme-color" content="#FFFFFF" />
+  <title>Additional Asset</title>
+  <link rel="icon" href="assetcues-logo.png" type="image/png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/tokens.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/layout.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/views.css" />
+  <link rel="stylesheet" href="css/motion.css" />
+  <link rel="stylesheet" href="css/modules.css" />
+</head>
+<body class="is-locked">
+  <div class="page-bg" aria-hidden="true">
+    <div class="page-bg__dots"></div>
+    <div class="page-bg__sweep"></div>
+  </div>
+
+  <header class="app-header">
+    <a href="#" class="app-header__brand" id="brand-home">
+      <span class="app-header__logo-chip">
+        <img class="app-header__logo" src="assetcues-logo.png" alt="Additional Asset" width="146" height="36" />
+      </span>
+      <span class="app-header__title">Additional Asset</span>
+    </a>
+    <div class="app-header__actions">
+      <a href="index.html" class="hub-back" id="hub-back" aria-label="All modules" title="All modules">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 4h6v6H4V4zm10 0h6v6h-6V4zM4 14h6v6H4v-6zm10 0h6v6h-6v-6z" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span class="hub-back__label">All modules</span>
+      </a>
+      <span id="mock-pill" class="mock-pill" hidden>Mock data</span>
+      <div id="health-pill" class="health health--checking" role="status" aria-label="Checking service">
+        <span class="health__dot" aria-hidden="true"></span>
+        <span class="health__label">Checking…</span>
+      </div>
+      <button type="button" class="btn btn--icon" id="btn-lock" aria-label="Lock app" title="Lock">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <rect x="5" y="11" width="14" height="10" rx="2" stroke="currentColor" stroke-width="1.75"/>
+          <path d="M8 11V8a4 4 0 0 1 8 0v3" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/>
+        </svg>
+      </button>
+      <div class="settings-wrap">
+        <button type="button" class="btn btn--icon" id="btn-settings" aria-label="Settings" aria-haspopup="dialog" aria-expanded="false">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+        <div id="settings-popover" class="popover" hidden role="dialog" aria-label="API settings">
+          <h3 class="popover__title">API settings</h3>
+          <div class="field">
+            <div class="field__row"><span class="field__label-text">API base URL</span></div>
+            <div class="field__input-wrap">
+              <input id="settings-api" class="field__input" type="url" placeholder="http://localhost:7071" autocomplete="off" spellcheck="false" />
+            </div>
+          </div>
+          <div id="settings-status" class="popover__status" aria-live="polite"></div>
+          <div class="popover__actions">
+            <button type="button" class="btn btn--secondary" id="settings-test">Test connection</button>
+            <button type="button" class="btn btn--primary" id="settings-save" style="height:44px">Save</button>
+            <button type="button" class="btn btn--ghost" id="settings-reset">Reset to default</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="app">
+    <!-- IDLE -->
+    <section id="view-idle" class="view" aria-labelledby="hero-title">
+      <div class="idle-layout">
+        <div class="idle-hero">
+          <div class="eyebrow">✦ AI asset capture</div>
+          <h1 id="hero-title" class="display">Two photos in. A complete asset record out.</h1>
+          <p class="idle-hero__sub">Add a photo of the asset and a close-up of its tag. We'll identify it, read the tag, grade its condition and match it to your master data.</p>
+        </div>
+
+        <div class="card capture-card">
+          <div class="step-head">
+            <span id="step-photos-badge" class="step-badge">1</span>
+            <span class="step-head__title">Photos</span>
+          </div>
+
+          <div class="dropzones">
+            <!-- Asset dropzone -->
+            <div>
+              <div id="dz-asset" class="dz">
+                <input class="dz__file" type="file" accept="image/jpeg,image/png,image/webp" tabindex="-1" aria-hidden="true" />
+                <button type="button" class="dz__btn" aria-label="Asset photo — choose a file" aria-describedby="dz-asset-hint">
+                  <span class="dz__icon" aria-hidden="true">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M4 8h3l2-2h6l2 2h3a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2zm8 3a3 3 0 1 0 0 6 3 3 0 0 0 0-6z" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  </span>
+                  <span class="dz__title">Asset photo</span>
+                  <span class="dz__hint" id="dz-asset-hint">Drop, click or paste</span>
+                  <span class="dz__formats">JPG · PNG · WebP · up to 10 MB</span>
+                  <span class="small" style="margin-top:4px">The whole asset, in good light</span>
+                </button>
+                <div class="dz__vf" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+                <div class="dz__preview">
+                  <img alt="" />
+                  <div class="dz__flash" aria-hidden="true"></div>
+                  <div class="dz__badge" aria-hidden="true">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M4 12l5 5L20 6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  </div>
+                  <div class="dz__meta">
+                    <div class="dz__meta-text">
+                      <div class="dz__filename"></div>
+                      <div class="dz__size"></div>
+                    </div>
+                    <div class="dz__actions">
+                      <button type="button" class="icon-btn" data-action="replace" aria-label="Replace asset photo">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 12a8 8 0 0 1 14-5M20 12a8 8 0 0 1-14 5M20 4v5h-5M4 20v-5h5" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                      </button>
+                      <button type="button" class="icon-btn" data-action="remove" aria-label="Remove asset photo">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 7h14M9 7V5h6v2m-8 0l1 12h8l1-12" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="dz__error-msg"></div>
+              <div class="dz__dup-warn" hidden></div>
+            </div>
+
+            <!-- Tag dropzone -->
+            <div>
+              <div id="dz-tag" class="dz">
+                <input class="dz__file" type="file" accept="image/jpeg,image/png,image/webp" tabindex="-1" aria-hidden="true" />
+                <button type="button" class="dz__btn" aria-label="Tag or barcode photo — choose a file" aria-describedby="dz-tag-hint">
+                  <span class="dz__icon" aria-hidden="true">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M3 5v14M6 5v14M8 5v14M12 5v14M14 5v14M18 5v14M21 5v14" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/></svg>
+                  </span>
+                  <span class="dz__title">Tag or barcode photo</span>
+                  <span class="dz__hint" id="dz-tag-hint">Drop, click or paste</span>
+                  <span class="dz__formats">JPG · PNG · WebP · up to 10 MB</span>
+                  <span class="small" style="margin-top:4px">A close-up of the asset tag</span>
+                </button>
+                <div class="dz__vf" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+                <div class="dz__preview">
+                  <img alt="" />
+                  <div class="dz__flash" aria-hidden="true"></div>
+                  <div class="dz__badge" aria-hidden="true">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M4 12l5 5L20 6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  </div>
+                  <div class="dz__meta">
+                    <div class="dz__meta-text">
+                      <div class="dz__filename"></div>
+                      <div class="dz__size"></div>
+                    </div>
+                    <div class="dz__actions">
+                      <button type="button" class="icon-btn" data-action="replace" aria-label="Replace tag photo">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 12a8 8 0 0 1 14-5M20 12a8 8 0 0 1-14 5M20 4v5h-5M4 20v-5h5" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                      </button>
+                      <button type="button" class="icon-btn" data-action="remove" aria-label="Remove tag photo">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 7h14M9 7V5h6v2m-8 0l1 12h8l1-12" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="dz__error-msg"></div>
+              <div class="dz__dup-warn" hidden></div>
+            </div>
+          </div>
+          <div class="divider"></div>
+
+          <div class="step-head">
+            <span id="step-details-badge" class="step-badge">2</span>
+            <span class="step-head__title">Details</span>
+          </div>
+
+          <div class="fields-grid">
+            <div class="field" id="field-customer">
+              <div class="field__row">
+                <span class="field__label-text">Customer ID<span class="field__req" aria-hidden="true">*</span></span>
+              </div>
+              <div class="field__input-wrap">
+                <input id="input-customer" class="field__input" type="text" inputmode="numeric" pattern="[0-9]*" autocomplete="off" maxlength="12" aria-required="true" aria-describedby="err-customer" />
+                <span class="field__check" aria-hidden="true">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 12l5 5L20 6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </span>
+              </div>
+              <div class="field__error" id="err-customer"></div>
+            </div>
+
+            <div class="field" id="field-assetclass">
+              <div class="field__row">
+                <span class="field__label-text">Asset class ID</span>
+                <span class="field__optional">Optional</span>
+              </div>
+              <div class="field__input-wrap">
+                <input id="input-assetclass" class="field__input" type="text" inputmode="numeric" pattern="[0-9]*" autocomplete="off" maxlength="12" aria-describedby="help-assetclass err-assetclass" />
+                <span class="field__check" aria-hidden="true">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 12l5 5L20 6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </span>
+              </div>
+              <div class="field__helper" id="help-assetclass">Narrows the master-data search to this asset class.</div>
+              <div class="field__error" id="err-assetclass"></div>
+            </div>
+
+            <div class="field" id="field-category">
+              <div class="field__row">
+                <span class="field__label-text">Category ID</span>
+                <span class="field__optional">Optional</span>
+              </div>
+              <div class="field__input-wrap">
+                <input id="input-category" class="field__input" type="text" inputmode="numeric" pattern="[0-9]*" autocomplete="off" maxlength="12" aria-describedby="help-category err-category" />
+                <span class="field__check" aria-hidden="true">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 12l5 5L20 6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </span>
+              </div>
+              <div class="field__helper" id="help-category">Narrows the master-data search to this category.</div>
+              <div class="field__error" id="err-category"></div>
+            </div>
+          </div>
+
+          <div class="divider"></div>
+
+          <div id="validation-summary" class="validation-summary"></div>
+          <div class="capture-actions capture-actions--desktop">
+            <button type="button" class="btn btn--primary" data-action="analyze" aria-disabled="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3v4M12 17v4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M3 12h4M17 12h4M4.9 19.1l2.8-2.8M16.3 7.7l2.8-2.8" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/></svg>
+              <span class="btn-label">Analyze asset</span>
+            </button>
+            <button type="button" class="btn btn--ghost" data-action="reset">Reset</button>
+            <span class="kbd-hint">⌘/Ctrl + Enter</span>
+          </div>
+        </div>
+
+        <aside class="showcase" aria-label="How it works">
+          <div id="showcase-video-wrap" class="showcase__video-wrap">
+            <video
+              id="hero-video"
+              class="showcase__video"
+              src="assetcues-animation.webm"
+              muted
+              autoplay
+              loop
+              playsinline
+              preload="auto"
+              aria-hidden="true"
+              tabindex="-1"
+              disablePictureInPicture
+            ></video>
+          </div>
+          <div id="showcase-art" class="showcase__art" hidden aria-hidden="true">
+            <div class="float-chip">LAPTOP</div>
+            <div class="float-chip">Good · 90</div>
+            <div class="float-chip">#10001882</div>
+            <div class="float-chip">CP › LAPTOP › VivoBook S14</div>
+            <div class="showcase__viewfinder">
+              <span class="showcase__corner showcase__corner--tl"></span>
+              <span class="showcase__corner showcase__corner--tr"></span>
+              <span class="showcase__corner showcase__corner--bl"></span>
+              <span class="showcase__corner showcase__corner--br"></span>
+            </div>
+          </div>
+
+          <div>
+            <h3 class="showcase__section-title">How it works</h3>
+            <ol class="how-list">
+              <li style="--i:0"><span class="how-list__n">1</span> Add photos of the asset and its tag</li>
+              <li style="--i:1"><span class="how-list__n">2</span> We analyse, read the tag and search master data</li>
+              <li style="--i:2"><span class="how-list__n">3</span> Get a complete asset record back</li>
+            </ol>
+          </div>
+
+          <div>
+            <h3 class="showcase__section-title">You'll get</h3>
+            <div class="youll-get">
+              <span class="chip">Asset name</span>
+              <span class="chip">Classification</span>
+              <span class="chip">Condition grade</span>
+              <span class="chip">Tag number</span>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- PROCESSING -->
+    <section id="view-processing" class="view" hidden aria-hidden="true" aria-labelledby="proc-title">
+      <div class="card processing-card">
+        <div class="proc-head">
+          <div class="proc-head__left">
+            <h2 id="proc-title" class="h2" tabindex="-1">Analyzing your asset…</h2>
+            <p class="small" style="margin:8px 0 0">Usually takes 10–30 seconds. Please keep this tab open.</p>
+            <div id="proc-rotator" class="proc-rotator" aria-live="off">Looking closely at your photos…</div>
+          </div>
+          <div class="proc-head__right">
+            <span id="proc-timer" class="proc-timer" aria-label="Elapsed time">00:00</span>
+            <button type="button" class="btn btn--ghost" id="btn-cancel">Cancel</button>
+          </div>
+        </div>
+
+        <div class="processing-grid">
+          <div>
+            <div id="scanner" class="scanner">
+              <img id="scanner-img" class="scanner__img" alt="" />
+              <div class="scanner__grid" aria-hidden="true"></div>
+              <div class="scanner__line" aria-hidden="true"></div>
+              <div class="scanner__brackets" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+              <div id="scanner-pip" class="scanner__pip">
+                <img id="scanner-pip-img" alt="" />
+              </div>
+            </div>
+            <div class="progress-wrap">
+              <div id="progress-bar" class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" aria-valuetext="Estimated progress 0 percent">
+                <div id="progress-fill" class="progress-bar__fill"></div>
+              </div>
+              <div class="progress-label">Estimated progress</div>
+            </div>
+          </div>
+
+          <ol id="timeline" class="timeline" aria-label="Analysis progress"></ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- RESULT -->
+    <section id="view-result" class="view" hidden aria-hidden="true" aria-labelledby="result-title">
+      <div class="result-head">
+        <div class="result-head__left">
+          <svg class="result-tick" viewBox="0 0 40 40" aria-hidden="true">
+            <circle cx="20" cy="20" r="18"></circle>
+            <path d="M12 20.5l5 5 11-12"></path>
+          </svg>
+          <div>
+            <h2 id="result-title" class="h2" tabindex="-1">Analysis complete</h2>
+            <p id="result-customer-sub" class="small mono" style="margin:6px 0 0"></p>
+          </div>
+        </div>
+        <div class="result-head__actions">
+          <button type="button" class="btn btn--primary" id="btn-another" style="height:44px">Analyze another asset</button>
+          <button type="button" class="btn btn--secondary" id="btn-edit">Edit inputs</button>
+          <button type="button" class="btn btn--ghost" id="btn-copy-json">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M8 8h10v12H8zM6 16H5a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Copy JSON
+          </button>
+        </div>
+      </div>
+
+      <div class="result-layout">
+        <div id="result-photos" class="result-photos"></div>
+        <div class="result-cards">
+          <div id="result-hero"></div>
+          <div id="result-class"></div>
+          <div class="result-cond-tag">
+            <div id="result-condition"></div>
+            <div id="result-tag"></div>
+          </div>
+          <div class="result-verify">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 4a8 8 0 1 0 0 16 8 8 0 0 0 0-16zm0 7v5m0-8h.01" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/></svg>
+            AI-generated results — please verify before saving.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ERROR -->
+    <section id="view-error" class="view" hidden aria-hidden="true" aria-labelledby="error-title">
+      <div class="error-wrap">
+        <div class="card error-card">
+          <div class="error-illu" aria-hidden="true">
+            <svg viewBox="0 0 72 72" fill="none">
+              <path d="M36 8l24 10v18c0 14-10.5 24-24 28C22.5 60 12 50 12 36V18l24-10z" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/>
+              <path d="M36 28v14M36 50h.01" stroke="currentColor" stroke-width="3.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h2 id="error-title" class="h2" tabindex="-1">Something went wrong</h2>
+          <p id="error-msg" class="error-card__msg"></p>
+          <div id="error-hint" class="callout error-hint" hidden></div>
+          <div class="error-actions">
+            <button type="button" class="btn btn--primary" id="btn-error-retry" style="height:44px">Try again</button>
+            <button type="button" class="btn btn--secondary" id="btn-error-edit">Edit inputs</button>
+            <button type="button" class="btn btn--ghost" id="btn-error-settings" hidden>Open settings</button>
+          </div>
+          <div id="error-ref" class="error-ref" hidden>
+            <span>Reference:</span>
+            <code id="error-ref-val" class="mono"></code>
+            <button type="button" class="btn btn--icon" id="btn-copy-ref" aria-label="Copy reference" style="width:36px;height:36px">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M8 8h10v12H8zM6 16H5a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="app-footer">
+    <div class="app-footer__inner">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 4a8 8 0 1 0 0 16 8 8 0 0 0 0-16zm0 7v5m0-8h.01" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/></svg>
+      AI-generated results — please verify before saving.
+    </div>
+  </footer>
+
+  <!-- Mobile sticky actions -->
+  <div id="sticky-idle" class="sticky-actions" hidden>
+    <button type="button" class="btn btn--primary" data-action="analyze" aria-disabled="true">
+      <span class="btn-label">Analyze asset</span>
+    </button>
+  </div>
+  <div id="sticky-result" class="sticky-actions" hidden>
+    <button type="button" class="btn btn--primary" id="sticky-another">Analyze another asset</button>
+  </div>
+
+  <div id="live" class="sr-only" aria-live="polite" aria-atomic="true"></div>
+  <div id="toasts" aria-live="polite"></div>
+
+  <!-- Soft access lock (SHA-256 + salt). Does not alter analysis state machine. -->
+  <div id="lock-overlay" class="lock-overlay" role="dialog" aria-modal="true" aria-labelledby="lock-title" aria-hidden="false">
+    <form id="lock-form" class="lock-card" autocomplete="off">
+      <div class="lock-card__brand">
+        <span class="app-header__logo-chip">
+          <img class="app-header__logo" src="assetcues-logo.png" alt="" width="146" height="36" />
+        </span>
+      </div>
+      <h1 id="lock-title" class="lock-card__title">Access required</h1>
+      <p class="lock-card__sub">Enter the access password to use Additional Asset.</p>
+      <label class="field" for="lock-password">
+        <div class="field__row"><span class="field__label-text">Password</span></div>
+        <div class="field__input-wrap">
+          <input id="lock-password" class="field__input" type="password" name="password" autocomplete="current-password" required />
+        </div>
+      </label>
+      <div id="lock-error" class="lock-card__error" role="alert"></div>
+      <button type="submit" class="btn btn--primary" id="lock-submit" style="width:100%;margin-top:8px">
+        <span class="btn-label">Unlock</span>
+      </button>
+    </form>
+  </div>
+
+  <script defer src="js/config.js"></script>
+  <script defer src="js/util.js"></script>
+  <script defer src="js/mocks.js"></script>
+  <script defer src="js/errors.js"></script>
+  <script defer src="js/normalize.js"></script>
+  <script defer src="js/api.js"></script>
+  <script defer src="js/fx.js"></script>
+  <script defer src="js/toast.js"></script>
+  <script defer src="js/lock.js"></script>
+  <script defer src="js/shell.js"></script>
+  <script defer src="js/upload.js"></script>
+  <script defer src="js/form.js"></script>
+  <script defer src="js/processing.js"></script>
+  <script defer src="js/result.js"></script>
+  <script defer src="js/views.js"></script>
+  <script defer src="js/main.js"></script>
+</body>
+</html>

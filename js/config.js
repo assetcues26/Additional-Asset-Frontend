@@ -2,6 +2,23 @@
   'use strict';
 
   AA.config = {
+    APP_NAME: 'Additional Asset',
+    SUBMIT_LABEL: 'Analyze asset',
+    LONG_WAIT_MS: 45000,
+    /** Module registry shared by the hub and each module page. */
+    MODULES: {
+      aa: {
+        page: 'additional-asset.html',
+        name: 'Additional Asset',
+        storageKey: 'aa.apiBase'
+      },
+      vc: {
+        page: 'validation.html',
+        name: 'Validation & Catalogue',
+        defaultApiBase: 'https://validation-catalogue-recommend.onrender.com',
+        storageKey: 'vc.apiBase'
+      }
+    },
     ASSETS: {
       logo: 'assetcues-logo.png',
       video: 'assetcues-animation.webm'
@@ -57,6 +74,7 @@
     LOCK_SALT: 'aa.frontend.lock.v1',
     LOCK_HASH: 'dd955b7bae7d83930e05d52a26385f7b637c1a4021221b7eacd843658efe0d4f'
   };
+  AA.config.MODULES.aa.defaultApiBase = AA.config.DEFAULT_API_BASE;
 
   AA.state = {
     view: 'idle',

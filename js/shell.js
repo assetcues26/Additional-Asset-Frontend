@@ -95,6 +95,18 @@
         });
       }
 
+      var hubBack = AA.$('#hub-back');
+      if (hubBack) {
+        hubBack.addEventListener('click', function (e) {
+          if (AA.state.view !== 'processing') return;
+          if (!window.confirm('Analysis is in progress. Leave and return to all modules?')) {
+            e.preventDefault();
+            return;
+          }
+          if (AA.processing && AA.processing.cancel) AA.processing.cancel(true);
+        });
+      }
+
       // Settings
       var btn = AA.$('#btn-settings');
       if (btn) {
